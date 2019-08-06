@@ -1,0 +1,78 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Principal.master.cs" Inherits="ControlLaboratorio.Principal" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="design/bootstrap/css/bootstrap-minty.min.css" rel="stylesheet" />
+    <link href="design/menu/menu.css" rel="stylesheet" />
+    <link href="design/form-contacto/main.css" rel="stylesheet" />
+    <link href="design/estilos.css" rel="stylesheet" />
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+    <script src="design/fullcalendar/lib/jquery.min.js"></script>
+    <script src="design/fullcalendar/lib/jquery-ui.min.js"></script>
+    <script src="design/bootstrap/js/bootstrap.min.js"></script>
+
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div">
+
+            <img id="botonMenu" src="iconos/menu.png" alt="menu" data-toggle="tooltip" data-placement="right" title="Menú" class="menu-boton" onclick="document.getElementsByTagName('nav')[0].className = 'menu-main menu_active'" runat="server" />
+            
+            <asp:ImageButton ID="botonLogout" ImageUrl="~/iconos/exit.png" runat="server" OnClick="botonLogout_Click"/>
+
+            <nav class="menu-main">
+                <p onclick="document.getElementsByTagName('nav')[0].className = 'menu-main'">cerrar</p>
+                <ol>
+                    <li class="menu-item"><a href="Estadisticas.aspx">Estadísticas</a></li>
+                    <li class="menu-item"><a href="Horario.aspx" >Administrar horarios</a></li>
+                    <li class="menu-item">
+                        <a href="#0">Registro de</a>
+                        <ol class="sub-menu">
+                            <li class="menu-item"><a href="Profesor.aspx">Profesores</a></li>
+                            <li class="menu-item"><a href="Materia.aspx">Materias</a></li>
+                            <li class="menu-item"><a href="Grupo.aspx">Grupos</a></li>
+                            <li class="menu-item"><a href="Cuatrimestre.aspx">Cuatrimestres</a></li>
+                            <li class="menu-item"><a href="AsignacionGrupo.aspx">Asignación de grupo</a></li>
+                        </ol>
+                    </li>
+                    <li class="menu-item"><a href="LoginForm.aspx">Salir</a></li>
+                </ol>
+            </nav>
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+
+            <div class="modal fade" id="modalMensajesMaster" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+
+
+                    <div class="modal-content">
+                        <div class="modal-header" id="modalHeaderMensajes" runat="server">
+                            <h5 class="modal-title text-white" id="exampleModalLongTitle">Información</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div id="mensajeModal" class="text-dark" runat="server">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</body>
+</html>
