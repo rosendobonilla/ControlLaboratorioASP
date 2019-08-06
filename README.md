@@ -1,1 +1,1 @@
-#Control de horarios de laboratorio ASP
+# Control de horarios de laboratorio ASP
